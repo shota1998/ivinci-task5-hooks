@@ -5,11 +5,11 @@ import { Typography, Toolbar } from '@material-ui/core';
 import useStyles from './Header.style';
 import GoCartButton from './UI/GoCartButton.jsx';
 
-const Header = ({ totalQuantity }) => {
+const Header = () => {
   console.log('--- Header()');
   const classes = useStyles();
 
-  return(
+  return (
     <Toolbar position='relative' className={classes.root}>
       <Link to='/' style={{ textDecoration: 'none' }} className={classes.title}>
         <Typography
@@ -24,9 +24,9 @@ const Header = ({ totalQuantity }) => {
         </Typography>
       </Link>
 
-      <GoCartButton />
+      <GoCartButton>CART</GoCartButton>
     </Toolbar>
-  )
+  );
 };
 
 export default Header;

@@ -13,7 +13,7 @@ import * as selector from '../redux/selectors';
 import { addItem, removeItem } from '../redux/actions';
 import ChangeQuantityButton from './UI/ChangeQuantityButton.jsx';
 
-const CartItem = ({ item }) => {
+const CartItem = React.memo(({ item }) => {
   console.log('--- CartItem()');
   useSelector((state) => selector.getOneQuantity(state, item.id));
 
@@ -30,7 +30,7 @@ const CartItem = ({ item }) => {
     [dispatch]
   );
 
-  return(
+  return (
     <>
       <Grid item xs={12} sm={6} md={4}>
         <Card className={classes.card}>
@@ -55,7 +55,7 @@ const CartItem = ({ item }) => {
         </Card>
       </Grid>
     </>
-  )
-};
+  );
+});
 
 export default CartItem;
